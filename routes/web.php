@@ -18,3 +18,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('audittrails', 'AuditTrailController');
+
+Route::resource('profile', 'ProfileController');
+
+Route::resource('users', 'UserController');
+
+Route::get('advancedforms', 'FormController@advancedForms');
+Route::resource('forms', 'FormController');
+
+Route::get('simpletables', 'TableController@simpleTables');
+Route::resource('datatables', 'TableController');
+
+Route::resource('export', 'ExcelController');
