@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\AuditTrail;
 
 class AuditTrailController extends Controller
 {
@@ -18,7 +19,8 @@ class AuditTrailController extends Controller
      */
     public function index()
     {
-        return view('layouts.audittrail.index');
+        $audittrails = AuditTrail::all();
+        return view('layouts.audittrail.index', compact('audittrails'));
     }
 
     /**

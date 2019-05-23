@@ -36,36 +36,6 @@ Simple Tables
               </td>
               <td><span class="badge bg-red">55%</span></td>
             </tr>
-            <tr>
-              <td>2.</td>
-              <td>Clean database</td>
-              <td>
-                <div class="progress progress-xs">
-                  <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                </div>
-              </td>
-              <td><span class="badge bg-yellow">70%</span></td>
-            </tr>
-            <tr>
-              <td>3.</td>
-              <td>Cron job running</td>
-              <td>
-                <div class="progress progress-xs progress-striped active">
-                  <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                </div>
-              </td>
-              <td><span class="badge bg-light-blue">30%</span></td>
-            </tr>
-            <tr>
-              <td>4.</td>
-              <td>Fix and squish bugs</td>
-              <td>
-                <div class="progress progress-xs progress-striped active">
-                  <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                </div>
-              </td>
-              <td><span class="badge bg-green">90%</span></td>
-            </tr>
           </table>
         </div>
         <!-- /.box-body -->
@@ -115,39 +85,8 @@ Simple Tables
               </td>
               <td><span class="badge bg-red">55%</span></td>
             </tr>
-            <tr>
-              <td>2.</td>
-              <td>Clean database</td>
-              <td>
-                <div class="progress progress-xs">
-                  <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                </div>
-              </td>
-              <td><span class="badge bg-yellow">70%</span></td>
-            </tr>
-            <tr>
-              <td>3.</td>
-              <td>Cron job running</td>
-              <td>
-                <div class="progress progress-xs progress-striped active">
-                  <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                </div>
-              </td>
-              <td><span class="badge bg-light-blue">30%</span></td>
-            </tr>
-            <tr>
-              <td>4.</td>
-              <td>Fix and squish bugs</td>
-              <td>
-                <div class="progress progress-xs progress-striped active">
-                  <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                </div>
-              </td>
-              <td><span class="badge bg-green">90%</span></td>
-            </tr>
           </table>
         </div>
-        <!-- /.box-body -->
       </div>
     </div>
   </div>
@@ -183,27 +122,6 @@ Simple Tables
               <td>John Doe</td>
               <td>11-7-2014</td>
               <td><span class="label label-success">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>219</td>
-              <td>Alexander Pierce</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-warning">Pending</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>657</td>
-              <td>Bob Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-primary">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>175</td>
-              <td>Mike Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-danger">Denied</span></td>
               <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
             </tr>
           </table>
