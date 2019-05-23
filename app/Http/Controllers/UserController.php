@@ -3,9 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Role;
+use App\Helpers\User\UserHelper;
 
 class UserController extends Controller
 {
+    protected $userhelper;
+
+    public function __construct(UserHelper $userhelper)
+    {
+        $this->middleware('auth');
+        $this->userhelper = $userhelper;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +24,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('layouts.users.index');
+        $users = User::all();
+        return view('layouts.users.index',compact('users'));
     }
 
     /**
@@ -23,6 +35,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        $roles = Role::all();
         return view('layouts.users.add');
     }
 
@@ -34,7 +47,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->userhelper->saveUser($request);
+
+        return redirect()->back()->with('success','User has been saved successfully');
     }
 
     /**
@@ -45,7 +60,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('layouts.users.show');
+        $decrypted_id = \Crypt::decrypt($id);
+        $user = User::find($decrypted_id);
+
+        return view('layouts.users.show', compact('user'));
     }
 
     /**
@@ -56,7 +74,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return view('layouts.users.edit');
+        $decrypted_id = \Crypt::decrypt($id);
+        $user = User::find($decrypted_id);
+        $roles = Role::all();
+
+        return view('layouts.users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -68,7 +90,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->userhelper->updateUser($request);
+
+        return redirect()->back()->with('success','User has been updated successfully');
     }
 
     /**

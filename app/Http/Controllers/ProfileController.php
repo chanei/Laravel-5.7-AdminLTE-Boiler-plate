@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Helpers\Profile\ProfileHelper;
 
 class ProfileController extends Controller
 {
+    protected $profilehelper;
+
+    public function __construct(ProfileHelper $profilehelper)
+    {
+        $this->middleware('auth');
+        $this->profilehelper = $profilehelper;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,9 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('layouts.profile.index');
+        $user = \Auth::user();
+
+        return view('layouts.profile.index', compact('user'));
     }
 
     /**
@@ -34,7 +45,11 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //update password
+        $this->profilehelper->updatePassword($request);
+
+        return redirect()->back()->with('success', 'Password has been updated successfully');
+
     }
 
     /**
@@ -68,7 +83,10 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //update user profile
+        $this->profilehelper->updateProfile($request);
+
+        return redirect()->back()->with('success', 'Password has been updated successfully');
     }
 
     /**
